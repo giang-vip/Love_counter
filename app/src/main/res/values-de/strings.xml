@@ -1,0 +1,130 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">Giao_dien</string>
+    <string name="textview">LOVE COUNTER</string>
+    <string name="textLOVE">LOVE</string>
+    <string name="textCOUNTER">COUNTER</string>
+
+    <!-- Language Names -->
+    <string name="language_title">Sprache</string>
+    <string name="language_english">Englisch</string>
+    <string name="language_hindi">Hindi</string>
+    <string name="language_spanish">Spanisch</string>
+    <string name="language_french">Französisch</string>
+    <string name="language_portuguese">Portugiesisch</string>
+    <string name="language_indonesian">Indonesisch</string>
+    <string name="language_german">Deutsch</string>
+
+    <string name="hello">Hallo</string>
+    <string name="love_counter">Liebes-Zähler</string>
+
+    <!-- Onboarding / Intro -->
+    <string name="intro_title_1">Entdecke eure Beziehung</string>
+    <string name="intro_description_1">Entdecke, wie gut du und dein Partner in der Liebe zusammenpasst</string>
+    <string name="intro_title_2">Liebestage zählen</string>
+    <string name="intro_description_2">Verfolge, wie lange du und dein Partner schon zusammen seid</string>
+    <string name="intro_title_3">Unvergessliche Momente</string>
+    <string name="intro_description_3">Bewahre die besonderen Momente auf, die ihr gemeinsam erlebt habt</string>
+    <string name="next">Weiter</string>
+    <string name="tv_per">Diese App benötigt die folgenden Berechtigungen</string>
+    <string name="tv_allow_access">Zugriff erlauben</string>
+    <string name="tv_permission">Berechtigung</string>
+    <string name="tv_continue">Weiter</string>
+
+    <string name="permission_dialog_title">Zugriff erlauben</string>
+    <string name="permission_dialog_message">Diese App benötigt Zugriff auf deine Kamera und Fotos.</string>
+    <string name="permission_dialog_cancel">Abbrechen</string>
+    <string name="permission_dialog_confirm">Zustimmen</string>
+
+    <!-- Home & Navigation -->
+    <string name="tv_home">Startseite</string>
+    <string name="tv_love_test">Liebestest</string>
+    <string name="tv_memory">Erinnerungen</string>
+    <string name="tv_sasuke">Sasuke</string>
+    <string name="tv_naruto">Naruto</string>
+    <string name="tv_26">26</string>
+    <string name="tv_tap_to_start_date">Tippe, um das Startdatum auszuwählen</string>
+    <string name="love_days_format">%1$d\nTage</string>
+    <string name="tv_choose_your_background">Wähle deinen Hintergrund</string>
+
+    <!-- Date & Information Editing -->
+    <string name="tv_start">Start</string>
+    <string name="tv_date">Datum</string>
+    <string name="tv_date_of_love">Liebesdatum</string>
+    <string name="tv_done">Fertig</string>
+    <string name="tv_11_09_2023">11/09/2023</string>
+    <string name="hint_22_02_1997">22/02/1997</string>
+    <string name="tv_22_02_1997">22/02/1997</string>
+    <string name="tv_information">Informationen</string>
+    <string name="tv_tap_to_change_photo">Tippe, um das Foto zu ändern</string>
+    <string name="tv_name">Name</string>
+    <string name="tv_gender">Geschlecht</string>
+    <string name="tv_birthday">Geburtstag</string>
+    <string name="gender_male">Männlich</string>
+    <string name="gender_female">Weiblich</string>
+    <string name="gender_other">Andere</string>
+
+    <!-- Buttons -->
+    <string name="btn_save">Speichern</string>
+    <string name="btn_cancel">Abbrechen</string>
+    <string name="btn_share">Teilen</string>
+    <string name="btn_retry">Wiederholen</string>
+    <string name="btn_love_test">Liebestest starten</string>
+    <string name="btn_take_photo">Foto aufnehmen</string>
+    <string name="btn_upload_photo">Foto hochladen</string>
+    <string name="tv_save">Speichern</string>
+
+    <!-- Name Test Feature -->
+    <string name="name_test_title">Namentest</string>
+    <string name="name_test_description">Finde eure Übereinstimmung heraus, indem du eure Namen eingibst.</string>
+    <string name="tv_your_name">Dein Name</string>
+    <string name="hint_your_name">Dein Name</string>
+    <string name="tv_partner_name">Name des Partners</string>
+    <string name="hint_partner_name">Name des Partners</string>
+    <string name="test_result_title">Ergebnis</string>
+    <string name="share_name_test_format">Liebestest-Ergebnis: %1$s &amp; %2$s passen zu %3$d%% zusammen!\n\n\"%4$s\"</string>
+
+    <!-- Name Test Descriptions -->
+    <string name="name_test_desc_1">Gegensätze ziehen sich an! Auch wenn ihr unterschiedliche Persönlichkeiten habt, schafft Geduld ein starkes Band.</string>
+    <string name="name_test_desc_2">Es sprühen Funken zwischen euch! Mit offener Kommunikation wird eure Liebe aufblühen.</string>
+    <string name="name_test_desc_3">Tolle Übereinstimmung! Ihr teilt eine tiefe Verbindung und gegenseitigen Respekt.</string>
+    <string name="name_test_desc_4">Wie füreinander geschaffen! Eure Seelen schwingen auf derselben Wellenlänge.</string>
+
+    <!-- Horoscope Test Feature -->
+    <string name="horoscope_test_title">Horoskop-Test</string>
+    <string name="horoscope_test_description">Mache einen süßen Sternzeichen-Kompatibilitätstest</string>
+    <string name="horoscope_bottom_sheet_title">Sternzeichen</string>
+    <string name="share_horoscope_test_format">Horoskop-Ergebnis: %1$s &amp; %2$s haben %3$d%% Kompatibilität!\n\n\"%4$s\"</string>
+
+    <!-- Horoscope Descriptions -->
+    <string name="horoscope_desc_1">Alles kann chaotisch werden, da es schwerfällt, einander vollkommen zu vertrauen...</string>
+    <string name="horoscope_desc_2">Beide versuchen, sich füreinander zu ändern, aber manchmal fühlt man sich erschöpft...</string>
+    <string name="horoscope_desc_3">Beide sind auf ihre Art stur; mehr Geduld und Verständnis sind nötig...</string>
+
+    <!-- Memory Feature -->
+    <string name="tv_tap_to_add_photo">Tippe, um ein Foto hinzuzufügen</string>
+    <string name="tv_title">Titel</string>
+    <string name="tv_date_of_memory">Erinnerungsdatum</string>
+    <string name="hint_dd_mm_yy">TT/MM/JJ</string>
+    <string name="memory_empty_title">Keine Jahrestage</string>
+    <string name="memory_empty_description">Bewahre eure unvergesslichen Momente hier auf!</string>
+
+    <!-- Setting Screen -->
+    <string name="setting_title">Einstellungen</string>
+    <string name="setting_language">Sprache</string>
+    <string name="setting_rate">Bewerten</string>
+    <string name="setting_share">Teilen</string>
+    <string name="setting_feedback">Feedback</string>
+    <string name="setting_privacy_policy">Datenschutz-Bestimmungen</string>
+
+    <!-- Dialogs & Toasts / Errors -->
+    <string name="dialog_select_photo_title">Option auswählen</string>
+    <string name="msg_error_empty_names">Bitte gib beide Namen ein</string>
+    <string name="msg_error_empty_title">Bitte gib einen Titel ein</string>
+    <string name="msg_rate_thank_you">Vielen Dank für deine Bewertung!</string>
+    <string name="share_app_text_format">Lade die Liebeszähler-App herunter: https://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="feedback_email_subject">Feedback zur Liebeszähler-App</string>
+    <string name="msg_error_no_email_client">Kein E-Mail-Programm gefunden</string>
+    <string name="msg_error_unable_open_link">Link konnte nicht geöffnet werden</string>
+    <string name="share_chooser_title">Teilen</string>
+    <string name="tv_ads_notice">Diese Aktion kann Werbung enthalten</string>
+</resources>

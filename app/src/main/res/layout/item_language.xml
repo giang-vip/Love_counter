@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/language_item_height"
+    android:layout_marginBottom="8dp"
+    android:paddingStart="12dp"
+    android:paddingEnd="12dp"
+    android:background="@drawable/bg_language_item">
+
+
+    <!-- Cờ -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivFlag"
+
+        android:layout_width="@dimen/flag_size"
+        android:layout_height="@dimen/flag_size"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.FlagCircle"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    <!-- Tên ngôn ngữ -->
+    <TextView
+        android:id="@+id/tvLanguage"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="12dp"
+
+        android:textColor="@color/text_secondary"
+        android:textSize="@dimen/language_text_size"
+
+        app:layout_constraintStart_toEndOf="@id/ivFlag"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

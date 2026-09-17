@@ -1,0 +1,134 @@
+<resources>
+    <string name="app_name">Giao_dien</string>
+    <string name="textview">LOVE COUNTER</string>
+    <string name="textLOVE">LOVE</string>
+    <string name="textCOUNTER">COUNTER</string>
+
+    <!-- Language Names -->
+    <string name="language_title">Idioma</string>
+    <string name="language_english">English</string>
+    <string name="language_hindi">Hindi</string>
+    <string name="language_spanish">Spanish</string>
+    <string name="language_french">French</string>
+    <string name="language_portuguese">Portuguese</string>
+    <string name="language_indonesian">Indonesian</string>
+    <string name="language_german">German</string>
+
+    <string name="hello">Hola</string>
+    <string name="love_counter">Contador de Amor</string>
+
+    <!-- Onboarding / Intro -->
+    <string name="intro_title_1">Prueba tu Relación</string>
+    <string name="intro_description_1">Descubre tu compatibilidad amorosa con tu pareja</string>
+    <string name="intro_title_2">Contador de Días de Amor</string>
+    <string name="intro_description_2">Lleva un registro de cuánto tiempo llevan juntos</string>
+    <string name="intro_title_3">Momentos Memorables</string>
+    <string name="intro_description_3">Conserva momentos especiales juntos</string>
+    <string name="next">Siguiente</string>
+    <string name="tv_per">Esta aplicación necesita los siguientes permisos para funcionar correctamente</string>
+    <string name="tv_allow_access">Permitir acceso</string>
+    <string name="tv_permission">Permiso</string>
+    <string name="tv_continue">Continuar</string>
+
+    <string name="permission_dialog_title">Permitir acceso</string>
+    <string name="permission_dialog_message">Esta aplicación necesita acceso a tu cámara y fotos.</string>
+    <string name="permission_dialog_cancel">Cancelar</string>
+    <string name="permission_dialog_confirm">Aceptar</string>
+
+    <!-- Home & Navigation -->
+    <string name="tv_home">Inicio</string>
+    <string name="tv_love_test">Test de Amor</string>
+    <string name="tv_memory">Recuerdos</string>
+    <string name="tv_sasuke">Sasuke</string>
+    <string name="tv_naruto">Naruto</string>
+    <string name="tv_26">26</string>
+    <string name="tv_tap_to_start_date">Toca para elegir fecha inicial</string>
+    <string name="love_days_format">%1$d\nDías</string>
+    <string name="tv_choose_your_background">Elige tu fondo de pantalla</string>
+
+    <!-- Date & Information Editing -->
+    <string name="tv_start">Inicio</string>
+    <string name="tv_date">Fecha</string>
+    <string name="tv_date_of_love">Fecha de inicio</string>
+    <string name="tv_done">Listo</string>
+    <string name="tv_11_09_2023">11/09/2023</string>
+    <string name="hint_22_02_1997">22/02/1997</string>
+    <string name="tv_22_02_1997">22/02/1997</string>
+    <string name="tv_information">Información</string>
+    <string name="tv_tap_to_change_photo">Toca para cambiar foto</string>
+    <string name="tv_name">Nombre</string>
+    <string name="tv_gender">Género</string>
+    <string name="tv_birthday">Cumpleaños</string>
+    <string name="gender_male">Masculino</string>
+    <string name="gender_female">Femenino</string>
+    <string name="gender_other">Otro</string>
+
+    <!-- Buttons -->
+    <string name="btn_save">Guardar</string>
+    <string name="btn_cancel">Cancelar</string>
+    <string name="btn_share">Compartir</string>
+    <string name="btn_retry">Reintentar</string>
+    <string name="btn_love_test">Iniciar Test</string>
+    <string name="btn_take_photo">Tomar foto</string>
+    <string name="btn_upload_photo">Subir foto</string>
+    <string name="tv_save">Guardar</string>
+
+    <!-- Name Test Feature -->
+    <string name="name_test_title">Test de Nombres</string>
+    <string name="name_test_description">Descubre tu compatibilidad ingresando sus nombres.</string>
+    <string name="tv_your_name">Tu nombre</string>
+    <string name="hint_your_name">Tu nombre</string>
+    <string name="tv_partner_name">Nombre de tu pareja</string>
+    <string name="hint_partner_name">Nombre de tu pareja</string>
+    <string name="test_result_title">Resultado</string>
+    <string name="share_name_test_format">Resultado del Test: ¡%1$s y %2$s tienen un %3$d%% de compatibilidad!\n\n\"%4$s\"</string>
+
+    <!-- Name Test Descriptions -->
+    <string name="name_test_desc_1">¡Los polos opuestos se atraen! Aunque tengan personalidades distintas, la paciencia construirá un lazo fuerte.</string>
+    <string name="name_test_desc_2">¡Hay una chispa entre ustedes! Con buena comunicación, su amor florecerá hermosa y fuertemente.</string>
+    <string name="name_test_desc_3">¡Gran pareja! Comparten una conexión profunda y respeto mutuo. ¡Sigan cultivando su amor juntos!</string>
+    <string name="name_test_desc_4">¡Una pareja perfecta! Sus almas resuenan en la misma frecuencia. ¡Nacieron el uno para el otro!</string>
+
+    <!-- Horoscope Test Feature -->
+    <string name="horoscope_test_title">Test de Horóscopo</string>
+    <string name="horoscope_test_description">Prueba un lindo test de compatibilidad zodiacal con tu pareja</string>
+    <string name="horoscope_bottom_sheet_title">Signo Zodiacal</string>
+    <string name="share_horoscope_test_format">Resultado del Horóscopo: ¡%1$s y %2$s tienen un %3$d%% de compatibilidad!\n\n\"%4$s\"</string>
+
+    <!-- Horoscope Descriptions -->
+    <string name="horoscope_desc_1">Las cosas pueden ser difíciles porque cuesta trabajo confiar completamente el uno en el otro...</string>
+    <string name="horoscope_desc_2">En la relación, ambos intentan cambiar por el otro, pero a veces se sienten agotados...</string>
+    <string name="horoscope_desc_3">En general, ambos son tercos a su manera; necesitan más paciencia y comprensión...</string>
+    <string name="horoscope_desc_4">Una relación tranquila y dulce, cultivando el amor día a día juntos...</string>
+    <string name="horoscope_desc_5">Un amor hermoso, pacífico y armonioso como un mar tranquilo...</string>
+    <string name="horoscope_desc_6">Se aman a su propia manera y se protegen mutuamente en las pequeñas cosas...</string>
+    <string name="horoscope_desc_7">Tienen muchas cosas en común y una gran atracción impulsada por la pasión y armonía...</string>
+
+    <!-- Memory Feature -->
+    <string name="tv_tap_to_add_photo">Toca para agregar foto</string>
+    <string name="tv_title">Título</string>
+    <string name="tv_date_of_memory">Fecha del recuerdo</string>
+    <string name="hint_dd_mm_yy">dd/mm/aa</string>
+    <string name="memory_empty_title">Sin aniversarios</string>
+    <string name="memory_empty_description">¡Conserva aquí tus recuerdos inolvidables!</string>
+
+    <!-- Setting Screen -->
+    <string name="setting_title">Ajustes</string>
+    <string name="setting_language">Idioma</string>
+    <string name="setting_rate">Calificar</string>
+    <string name="setting_share">Compartir</string>
+    <string name="setting_feedback">Comentarios</string>
+    <string name="setting_privacy_policy">Política de Privacidad</string>
+
+    <!-- Dialogs & Toasts / Errors -->
+    <string name="dialog_select_photo_title">Seleccionar Opción</string>
+    <string name="msg_error_empty_names">Por favor ingresa ambos nombres</string>
+    <string name="msg_error_empty_title">Por favor ingresa un título</string>
+    <string name="msg_rate_thank_you">¡Gracias por calificar nuestra aplicación!</string>
+    <string name="share_app_text_format">Descarga la app Contador de Amor: https://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="feedback_email_subject">Comentarios sobre la App Contador de Amor</string>
+    <string name="msg_error_no_email_client">No se encontró cliente de correo</string>
+    <string name="msg_error_unable_open_link">No se pudo abrir el enlace</string>
+    <string name="share_chooser_title">Compartir</string>
+    <string name="tv_ads_notice">Esta acción puede contener anuncios</string>
+</resources>

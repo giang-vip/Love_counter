@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Top Bar Title -->
+    <TextView
+        android:id="@+id/tvHeaderTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/tv_memory"
+        android:textColor="#1E232E"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 1. DẠNG 1: TRẠNG THÁI RỖNG (EMPTY STATE) -->
+    <LinearLayout
+        android:id="@+id/layoutEmptyState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:layout_marginTop="50dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHeaderTitle">
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="140dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_memory" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/memory_empty_title"
+            android:textColor="#1E232E"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/memory_empty_description"
+            android:textColor="#888888"
+            android:textSize="12sp" />
+
+        <!-- Nút Tròn Thêm Kỷ Niệm (Empty) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnEmptyAdd"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="32dp"
+            app:cardBackgroundColor="#FFEAEA"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_plus_red"
+                app:tint="#FF0845" />
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <!-- 2. DẠNG 2: DANH SÁCH KỶ NIỆM (WHEN HAS DATA) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMemoryList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:clipToPadding="false"
+        android:paddingHorizontal="20dp"
+        android:paddingBottom="140dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHeaderTitle"
+        tools:listitem="@layout/item_memory" />
+
+    <!-- Nút Nổi Thêm Mới khi đã có danh sách (ở góc dưới bên phải nổi phía trên Bottom Nav & Banner Ad) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btnFabAdd"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="120dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/color_ffeaea"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="4dp"
+        app:strokeWidth="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_plus_red"
+            app:tint="#FF0845" />
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,119 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">Giao_dien</string>
+    <string name="textview">LOVE COUNTER</string>
+    <string name="textLOVE">LOVE</string>
+    <string name="textCOUNTER">COUNTER</string>
+
+    <!-- Language Names -->
+    <string name="language_title">भाषा</string>
+    <string name="language_english">अंग्रेज़ी</string>
+    <string name="language_hindi">हिंदी</string>
+    <string name="language_spanish">स्पेनिश</string>
+    <string name="language_french">फ़्रेंच</string>
+    <string name="language_portuguese">पुर्तगाली</string>
+    <string name="language_indonesian">इंडोनेशियाई</string>
+    <string name="language_german">जर्मन</string>
+
+    <string name="hello">नमस्ते</string>
+    <string name="love_counter">लव काउंटर</string>
+
+    <!-- Onboarding / Intro -->
+    <string name="intro_title_1">अपने रिश्ते को जानें</string>
+    <string name="intro_description_1">अपने और अपने साथी के बीच प्रेम अनुकूलता का स्तर जानें</string>
+    <string name="intro_title_2">प्यार के दिनों की गिनती</string>
+    <string name="intro_description_2">आप और आपके साथी के साथ बिताए समय को ट्रैक करें</string>
+    <string name="intro_title_3">यादगार पल</string>
+    <string name="intro_description_3">साथ बिताए खास पलों को संजोकर रखें</string>
+    <string name="next">अगला</string>
+    <string name="tv_per">इस ऐप को ठीक से काम करने के लिए अनुमति चाहिए</string>
+    <string name="tv_allow_access">अनुमति दें</string>
+    <string name="tv_permission">अनुमति</string>
+    <string name="tv_continue">जारी रखें</string>
+
+    <string name="permission_dialog_title">अनुमति दें</string>
+    <string name="permission_dialog_message">इस ऐप को आपके कैमरे और फ़ोटो तक पहुंच की आवश्यकता है।</string>
+    <string name="permission_dialog_cancel">रद्द करें</string>
+    <string name="permission_dialog_confirm">स्वीकार करें</string>
+
+    <!-- Home & Navigation -->
+    <string name="tv_home">होम</string>
+    <string name="tv_love_test">लव टेस्ट</string>
+    <string name="tv_memory">यादें</string>
+    <string name="tv_sasuke">Sasuke</string>
+    <string name="tv_naruto">Naruto</string>
+    <string name="tv_26">26</string>
+    <string name="tv_tap_to_start_date">शुरुआती तारीख चुनने के लिए टैप करें</string>
+    <string name="love_days_format">%1$d\nदिन</string>
+    <string name="tv_choose_your_background">अपना बैकग्राउंड चुनें</string>
+
+    <!-- Date & Information Editing -->
+    <string name="tv_start">शुरू</string>
+    <string name="tv_date">तारीख</string>
+    <string name="tv_date_of_love">प्यार की तारीख</string>
+    <string name="tv_done">हो गया</string>
+    <string name="tv_11_09_2023">11/09/2023</string>
+    <string name="hint_22_02_1997">22/02/1997</string>
+    <string name="tv_22_02_1997">22/02/1997</string>
+    <string name="tv_information">जानकारी</string>
+    <string name="tv_tap_to_change_photo">फ़ोटो बदलने के लिए टैप करें</string>
+    <string name="tv_name">नाम</string>
+    <string name="tv_gender">लिंग</string>
+    <string name="tv_birthday">जन्मदिन</string>
+    <string name="gender_male">पुरुष</string>
+    <string name="gender_female">महिला</string>
+    <string name="gender_other">अन्य</string>
+
+    <!-- Buttons -->
+    <string name="btn_save">सहेजें</string>
+    <string name="btn_cancel">रद्द करें</string>
+    <string name="btn_share">शेयर करें</string>
+    <string name="btn_retry">पुनः प्रयास करें</string>
+    <string name="btn_love_test">टेस्ट शुरू करें</string>
+    <string name="btn_take_photo">फ़ोटो लें</string>
+    <string name="btn_upload_photo">फ़ोटो अपलोड करें</string>
+    <string name="tv_save">सहेजें</string>
+
+    <!-- Name Test Feature -->
+    <string name="name_test_title">नाम टेस्ट</string>
+    <string name="name_test_description">अपने नाम दर्ज करके अपनी अनुकूलता का पता लगाएं।</string>
+    <string name="tv_your_name">आपका नाम</string>
+    <string name="hint_your_name">आपका नाम</string>
+    <string name="tv_partner_name">साझीदार का नाम</string>
+    <string name="hint_partner_name">साझीदार का नाम</string>
+    <string name="test_result_title">परिणाम</string>
+    <string name="share_name_test_format">लव टेस्ट परिणाम: %1$s और %2$s के बीच %3$d%% लव मैच है!\n\n\"%4$s\"</string>
+
+    <!-- Horoscope Test Feature -->
+    <string name="horoscope_test_title">राशिफल टेस्ट</string>
+    <string name="horoscope_test_description">अपने क्रश के साथ राशि अनुकूलता टेस्ट करें</string>
+    <string name="horoscope_bottom_sheet_title">राशि</string>
+    <string name="share_horoscope_test_format">राशिफल परिणाम: %1$s और %2$s %3$d%% अनुकूल हैं!\n\n\"%4$s\"</string>
+
+    <!-- Memory Feature -->
+    <string name="tv_tap_to_add_photo">फ़ोटो जोड़ने के लिए टैप करें</string>
+    <string name="tv_title">शीर्षक</string>
+    <string name="tv_date_of_memory">याद की तारीख</string>
+    <string name="hint_dd_mm_yy">दिन/माह/वर्ष</string>
+    <string name="memory_empty_title">कोई वर्षगांठ नहीं</string>
+    <string name="memory_empty_description">अपनी खास यादों को यहाँ सहेज कर रखें!</string>
+
+    <!-- Setting Screen -->
+    <string name="setting_title">सेटिंग्स</string>
+    <string name="setting_language">भाषा</string>
+    <string name="setting_rate">रेट करें</string>
+    <string name="setting_share">शेयर करें</string>
+    <string name="setting_feedback">प्रतिक्रिया</string>
+    <string name="setting_privacy_policy">गोपनीयता नीति</string>
+
+    <!-- Dialogs & Toasts / Errors -->
+    <string name="dialog_select_photo_title">विकल्प चुनें</string>
+    <string name="msg_error_empty_names">कृपया दोनों नाम दर्ज करें</string>
+    <string name="msg_error_empty_title">कृपया एक शीर्षक दर्ज करें</string>
+    <string name="msg_rate_thank_you">रेटिंग देने के लिए धन्यवाद!</string>
+    <string name="share_app_text_format">लव काउंटर ऐप डाउनलोड करें: https://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="feedback_email_subject">लव काउंटर ऐप के लिए प्रतिक्रिया</string>
+    <string name="msg_error_no_email_client">कोई ईमेल ऐप नहीं मिला</string>
+    <string name="msg_error_unable_open_link">लिंक खोलने में असमर्थ</string>
+    <string name="share_chooser_title">शेयर करें</string>
+    <string name="tv_ads_notice">इस क्रिया में विज्ञापन हो सकते हैं</string>
+</resources>

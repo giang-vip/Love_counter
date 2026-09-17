@@ -1,0 +1,134 @@
+<resources>
+    <string name="app_name">Giao_dien</string>
+    <string name="textview">LOVE COUNTER</string>
+    <string name="textLOVE">LOVE</string>
+    <string name="textCOUNTER">COUNTER</string>
+
+    <!-- Language Names -->
+    <string name="language_title">Ngôn ngữ</string>
+    <string name="language_english">English</string>
+    <string name="language_hindi">Hindi</string>
+    <string name="language_spanish">Spanish</string>
+    <string name="language_french">French</string>
+    <string name="language_portuguese">Portuguese</string>
+    <string name="language_indonesian">Indonesian</string>
+    <string name="language_german">German</string>
+
+    <string name="hello">Xin chào</string>
+    <string name="love_counter">Đếm Ngày Yêu</string>
+
+    <!-- Onboarding / Intro -->
+    <string name="intro_title_1">Kiểm Tra Mối Quan Hệ</string>
+    <string name="intro_description_1">Khám phá mức độ tương hợp tình yêu của bạn và nửa kia</string>
+    <string name="intro_title_2">Đếm Ngày Yêu</string>
+    <string name="intro_description_2">Theo dõi khoảng thời gian hai bạn đã đồng hành bên nhau</string>
+    <string name="intro_title_3">Khoảnh Khắc Đáng Nhớ</string>
+    <string name="intro_description_3">Lưu giữ những kỷ niệm đẹp đẽ và trân quý cùng nhau</string>
+    <string name="next">Tiếp theo</string>
+    <string name="tv_per">Ứng dụng cần các quyền dưới đây để hoạt động bình thường</string>
+    <string name="tv_allow_access">Cho phép truy cập</string>
+    <string name="tv_permission">Quyền truy cập</string>
+    <string name="tv_continue">Tiếp tục</string>
+
+    <string name="permission_dialog_title">Cho phép truy cập</string>
+    <string name="permission_dialog_message">Ứng dụng cần quyền truy cập vào máy ảnh và bộ sưu tập ảnh của bạn.</string>
+    <string name="permission_dialog_cancel">Hủy</string>
+    <string name="permission_dialog_confirm">Đồng ý</string>
+
+    <!-- Home & Navigation -->
+    <string name="tv_home">Trang chủ</string>
+    <string name="tv_love_test">Bói tình yêu</string>
+    <string name="tv_memory">Kỷ niệm</string>
+    <string name="tv_sasuke">Sasuke</string>
+    <string name="tv_naruto">Naruto</string>
+    <string name="tv_26">26</string>
+    <string name="tv_tap_to_start_date">Chạm để chọn ngày bắt đầu</string>
+    <string name="love_days_format">%1$d\nNgày</string>
+    <string name="tv_choose_your_background">Chọn ảnh nền của bạn</string>
+
+    <!-- Date & Information Editing -->
+    <string name="tv_start">Bắt đầu</string>
+    <string name="tv_date">Ngày</string>
+    <string name="tv_date_of_love">Ngày bắt đầu yêu</string>
+    <string name="tv_done">Xong</string>
+    <string name="tv_11_09_2023">11/09/2023</string>
+    <string name="hint_22_02_1997">22/02/1997</string>
+    <string name="tv_22_02_1997">22/02/1997</string>
+    <string name="tv_information">Thông tin</string>
+    <string name="tv_tap_to_change_photo">Chạm để đổi ảnh</string>
+    <string name="tv_name">Tên</string>
+    <string name="tv_gender">Giới tính</string>
+    <string name="tv_birthday">Ngày sinh</string>
+    <string name="gender_male">Nam</string>
+    <string name="gender_female">Nữ</string>
+    <string name="gender_other">Khác</string>
+
+    <!-- Buttons -->
+    <string name="btn_save">Lưu</string>
+    <string name="btn_cancel">Hủy</string>
+    <string name="btn_share">Chia sẻ</string>
+    <string name="btn_retry">Thử lại</string>
+    <string name="btn_love_test">Kiểm tra ngay</string>
+    <string name="btn_take_photo">Chụp ảnh</string>
+    <string name="btn_upload_photo">Tải ảnh lên</string>
+    <string name="tv_save">Lưu</string>
+
+    <!-- Name Test Feature -->
+    <string name="name_test_title">Bói Theo Tên</string>
+    <string name="name_test_description">Khám phá độ tương hợp bằng cách nhập tên của hai bạn.</string>
+    <string name="tv_your_name">Tên của bạn</string>
+    <string name="hint_your_name">Tên của bạn</string>
+    <string name="tv_partner_name">Tên người ấy</string>
+    <string name="hint_partner_name">Tên người ấy</string>
+    <string name="test_result_title">Kết quả</string>
+    <string name="share_name_test_format">Kết quả bói tình yêu: %1$s &amp; %2$s có độ tương hợp %3$d%%!\n\n\"%4$s\"</string>
+
+    <!-- Name Test Descriptions -->
+    <string name="name_test_desc_1">Nam nữ hút nhau! Dù tính cách khác biệt, sự kiên nhẫn và thấu hiểu sẽ giúp hai bạn xây dựng tình yêu bền chặt.</string>
+    <string name="name_test_desc_2">Có một tia lửa tình yêu giữa hai bạn! Hãy trò chuyện cởi mở và dành thời gian bên nhau để tình yêu nở hoa rực rỡ.</string>
+    <string name="name_test_desc_3">Cặp đôi tuyệt vời! Hai bạn có sự kết nối sâu sắc và tôn trọng lẫn nhau. Hãy tiếp tục vun đắp tình yêu này nhé!</string>
+    <string name="name_test_desc_4">Cặp đôi trời sinh! Tâm hồn hai bạn cùng chung một tần số. Hai bạn thực sự sinh ra là để dành cho nhau!</string>
+
+    <!-- Horoscope Test Feature -->
+    <string name="horoscope_test_title">Bói Cung Hoàng Đạo</string>
+    <string name="horoscope_test_description">Thử bói độ hợp nhau theo Cung Hoàng Đạo cực dễ thương</string>
+    <string name="horoscope_bottom_sheet_title">Cung Hoàng Đạo</string>
+    <string name="share_horoscope_test_format">Kết quả bói Cung Hoàng Đạo: %1$s &amp; %2$s có độ tương hợp %3$d%%!\n\n\"%4$s\"</string>
+
+    <!-- Horoscope Descriptions -->
+    <string name="horoscope_desc_1">Mọi thứ dễ trở nên hỗn loạn vì hai bên khó đặt niềm tin trọn vẹn vào nhau...</string>
+    <string name="horoscope_desc_2">Trong tình yêu, cả hai cùng nỗ lực vì đối phương nhưng đôi khi cảm thấy kiệt sức...</string>
+    <string name="horoscope_desc_3">Nhìn chung cả hai đều bướng bỉnh theo cách riêng, cần thêm sự kiên nhẫn và bao dung...</string>
+    <string name="horoscope_desc_4">Mối quan hệ không quá nồng nhiệt nhưng bình yên, cùng nhau vun đắp tình cảm mỗi ngày...</string>
+    <string name="horoscope_desc_5">Một tình yêu đẹp đẽ, êm đềm và hòa hợp như mặt biển bình yên...</string>
+    <string name="horoscope_desc_6">Yêu nhau theo cách riêng, bảo vệ che chở nhau từ những điều nhỏ nhặt nhất...</string>
+    <string name="horoscope_desc_7">Hai bạn có vô vàn điểm chung, bị thu hút mạnh mẽ bởi sự đồng điệu và đam mê...</string>
+
+    <!-- Memory Feature -->
+    <string name="tv_tap_to_add_photo">Chạm để thêm ảnh</string>
+    <string name="tv_title">Tiêu đề</string>
+    <string name="tv_date_of_memory">Ngày kỷ niệm</string>
+    <string name="hint_dd_mm_yy">dd/mm/yy</string>
+    <string name="memory_empty_title">Chưa có kỷ niệm</string>
+    <string name="memory_empty_description">Lưu giữ những khoảnh khắc đáng nhớ của hai bạn tại đây!</string>
+
+    <!-- Setting Screen -->
+    <string name="setting_title">Cài đặt</string>
+    <string name="setting_language">Ngôn ngữ</string>
+    <string name="setting_rate">Đánh giá</string>
+    <string name="setting_share">Chia sẻ</string>
+    <string name="setting_feedback">Góp ý</string>
+    <string name="setting_privacy_policy">Chính sách bảo mật</string>
+
+    <!-- Dialogs & Toasts / Errors -->
+    <string name="dialog_select_photo_title">Tùy chọn</string>
+    <string name="msg_error_empty_names">Vui lòng nhập tên của cả hai người</string>
+    <string name="msg_error_empty_title">Vui lòng nhập tiêu đề</string>
+    <string name="msg_rate_thank_you">Cảm ơn bạn đã đánh giá ứng dụng!</string>
+    <string name="share_app_text_format">Tải ứng dụng Đếm Ngày Yêu: https://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="feedback_email_subject">Góp ý cho ứng dụng Đếm Ngày Yêu</string>
+    <string name="msg_error_no_email_client">Không tìm thấy ứng dụng email</string>
+    <string name="msg_error_unable_open_link">Không thể mở liên kết</string>
+    <string name="share_chooser_title">Chia sẻ</string>
+    <string name="tv_ads_notice">Hành động này có thể chứa quảng cáo</string>
+</resources>

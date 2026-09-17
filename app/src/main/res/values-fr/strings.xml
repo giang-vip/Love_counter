@@ -1,0 +1,119 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">Giao_dien</string>
+    <string name="textview">LOVE COUNTER</string>
+    <string name="textLOVE">LOVE</string>
+    <string name="textCOUNTER">COUNTER</string>
+
+    <!-- Language Names -->
+    <string name="language_title">Langue</string>
+    <string name="language_english">Anglais</string>
+    <string name="language_hindi">Hindi</string>
+    <string name="language_spanish">Espagnol</string>
+    <string name="language_french">Français</string>
+    <string name="language_portuguese">Portugais</string>
+    <string name="language_indonesian">Indonésien</string>
+    <string name="language_german">Allemand</string>
+
+    <string name="hello">Bonjour</string>
+    <string name="love_counter">Compteur d\'amour</string>
+
+    <!-- Onboarding / Intro -->
+    <string name="intro_title_1">Découvrez votre relation</string>
+    <string name="intro_description_1">Découvrez votre niveau de compatibilité amoureuse avec votre partenaire</string>
+    <string name="intro_title_2">Compteur de jours d\'amour</string>
+    <string name="intro_description_2">Suivez votre histoire d\'amour et le temps passé ensemble</string>
+    <string name="intro_title_3">Moments inoubliables</string>
+    <string name="intro_description_3">Gardez précieusement les moments spéciaux que vous avez partagés</string>
+    <string name="next">Suivant</string>
+    <string name="tv_per">Cette application nécessite les autorisations ci-dessous</string>
+    <string name="tv_allow_access">Autoriser l\'accès</string>
+    <string name="tv_permission">Autorisation</string>
+    <string name="tv_continue">Continuer</string>
+
+    <string name="permission_dialog_title">Autoriser l\'accès</string>
+    <string name="permission_dialog_message">Cette application a besoin d\'accéder à votre appareil photo et vos photos.</string>
+    <string name="permission_dialog_cancel">Annuler</string>
+    <string name="permission_dialog_confirm">Accepter</string>
+
+    <!-- Home & Navigation -->
+    <string name="tv_home">Accueil</string>
+    <string name="tv_love_test">Test d\'amour</string>
+    <string name="tv_memory">Souvenirs</string>
+    <string name="tv_sasuke">Sasuke</string>
+    <string name="tv_naruto">Naruto</string>
+    <string name="tv_26">26</string>
+    <string name="tv_tap_to_start_date">Appuyez pour choisir la date de début</string>
+    <string name="love_days_format">%1$d\nJours</string>
+    <string name="tv_choose_your_background">Choisissez votre fond d\'écran</string>
+
+    <!-- Date & Information Editing -->
+    <string name="tv_start">Début</string>
+    <string name="tv_date">Date</string>
+    <string name="tv_date_of_love">Date d\'amour</string>
+    <string name="tv_done">Terminé</string>
+    <string name="tv_11_09_2023">11/09/2023</string>
+    <string name="hint_22_02_1997">22/02/1997</string>
+    <string name="tv_22_02_1997">22/02/1997</string>
+    <string name="tv_information">Informations</string>
+    <string name="tv_tap_to_change_photo">Appuyez pour changer la photo</string>
+    <string name="tv_name">Nom</string>
+    <string name="tv_gender">Genre</string>
+    <string name="tv_birthday">Date de naissance</string>
+    <string name="gender_male">Homme</string>
+    <string name="gender_female">Femme</string>
+    <string name="gender_other">Autre</string>
+
+    <!-- Buttons -->
+    <string name="btn_save">Enregistrer</string>
+    <string name="btn_cancel">Annuler</string>
+    <string name="btn_share">Partager</string>
+    <string name="btn_retry">Réessayer</string>
+    <string name="btn_love_test">Lancer le test</string>
+    <string name="btn_take_photo">Prendre une photo</string>
+    <string name="btn_upload_photo">Importer une photo</string>
+    <string name="tv_save">Enregistrer</string>
+
+    <!-- Name Test Feature -->
+    <string name="name_test_title">Test des Noms</string>
+    <string name="name_test_description">Découvrez votre compatibilité en entrant vos prénoms.</string>
+    <string name="tv_your_name">Votre prénom</string>
+    <string name="hint_your_name">Votre prénom</string>
+    <string name="tv_partner_name">Prénom de votre partenaire</string>
+    <string name="hint_partner_name">Prénom de votre partenaire</string>
+    <string name="test_result_title">Résultat</string>
+    <string name="share_name_test_format">Résultat du test : %1$s &amp; %2$s ont %3$d%% de compatibilité !\n\n\"%4$s\"</string>
+
+    <!-- Horoscope Test Feature -->
+    <string name="horoscope_test_title">Test Horoscope</string>
+    <string name="horoscope_test_description">Testez la compatibilité astrologique de vos signes</string>
+    <string name="horoscope_bottom_sheet_title">Signe Astrologique</string>
+    <string name="share_horoscope_test_format">Résultat Horoscope : %1$s &amp; %2$s ont %3$d%% de compatibilité !\n\n\"%4$s\"</string>
+
+    <!-- Memory Feature -->
+    <string name="tv_tap_to_add_photo">Appuyez pour ajouter une photo</string>
+    <string name="tv_title">Titre</string>
+    <string name="tv_date_of_memory">Date du souvenir</string>
+    <string name="hint_dd_mm_yy">jj/mm/aa</string>
+    <string name="memory_empty_title">Aucun anniversaire</string>
+    <string name="memory_empty_description">Conservez vos précieux souvenirs ici !</string>
+
+    <!-- Setting Screen -->
+    <string name="setting_title">Paramètres</string>
+    <string name="setting_language">Langue</string>
+    <string name="setting_rate">Évaluer</string>
+    <string name="setting_share">Partager</string>
+    <string name="setting_feedback">Commentaires</string>
+    <string name="setting_privacy_policy">Politique de confidentialité</string>
+
+    <!-- Dialogs & Toasts / Errors -->
+    <string name="dialog_select_photo_title">Sélectionner une option</string>
+    <string name="msg_error_empty_names">Veuillez entrer les deux prénoms</string>
+    <string name="msg_error_empty_title">Veuillez entrer un titre</string>
+    <string name="msg_rate_thank_you">Merci d\'avoir évalué notre application !</string>
+    <string name="share_app_text_format">Téléchargez l\'application Compteur d\'Amour : https://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="feedback_email_subject">Avis sur l\'application Compteur d\'Amour</string>
+    <string name="msg_error_no_email_client">Aucun client de messagerie trouvé</string>
+    <string name="msg_error_unable_open_link">Impossible d\'ouvrir le lien</string>
+    <string name="share_chooser_title">Partager</string>
+    <string name="tv_ads_notice">Cette action peut contenir des publicités</string>
+</resources>

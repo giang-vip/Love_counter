@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="logo_color">#FF9595</color>
+    <color name="text_counter">#FF0845</color>
+
+    <color name="background_language">#F9FAFC</color>
+
+    <color name="text_primary">#20242A</color>
+
+    <color name="text_secondary">#30343A</color>
+
+    <color name="pink">#FF4F70</color>
+
+    <color name="pink_light">#FFB6C5</color>
+
+    <color name="item_normal">#F2F2F3</color>
+
+    <color name="check_color">#FF4169</color>
+
+    <color name="border_selected">#FF4169</color>
+    <color name="color_F7F7F7">#F7F7F7</color>
+    <color name="color_4b4f58">#4B4F58</color>
+    <color name="color_1e232e">#1E232E</color>
+    <color name="color_ffeaea">#FFEAEA</color>
+
+    
+</resources>
