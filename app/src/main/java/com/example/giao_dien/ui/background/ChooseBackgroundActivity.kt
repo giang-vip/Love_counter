@@ -9,7 +9,10 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.giao_dien.ads.InterstitialAdManager
+import com.example.giao_dien.ads.AdConfig
+import com.example.giao_dien.ads.AdPlacement
+import com.example.giao_dien.ads.FirebaseConfigManager
+import com.example.giao_dien.ads.InterAdsUtils
 import com.example.giao_dien.data.repository.CoupleRepositoryImpl
 import com.example.giao_dien.databinding.ActivityChooseBackgroundBinding
 import com.example.giao_dien.utils.ImageStorageManager
@@ -40,9 +43,6 @@ class ChooseBackgroundActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityChooseBackgroundBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // Tải trước Interstitial Ad khi mở màn hình
-        InterstitialAdManager.getInstance().loadAd(this)
 
         setupRecyclerView()
         setupClickListeners()
@@ -77,9 +77,16 @@ class ChooseBackgroundActivity : AppCompatActivity() {
                     viewModel.event.collect { event ->
                         when (event) {
                             is BackgroundEvent.BackgroundSaved -> {
-                                InterstitialAdManager.getInstance().showAd(this@ChooseBackgroundActivity) {
-                                    finish()
-                                }
+                                InterAdsUtils.showSplashAds(
+                                    activity = this@ChooseBackgroundActivity,
+                                    lifecycleOwner = this@ChooseBackgroundActivity,
+                                    idAds = AdConfig.remoteInterstitialId,
+                                    adPlacement = AdPlacement.INTER_SPLASH, // Hoặc định nghĩa cờ riêng nếu cần
+                                    isEnable = FirebaseConfigManager.getInstance().adConfig.interSplash,
+                                    action = {
+                                        finish()
+                                    }
+                                )
                             }
                         }
                     }

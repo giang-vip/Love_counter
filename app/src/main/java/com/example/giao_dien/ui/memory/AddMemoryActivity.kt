@@ -13,7 +13,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.example.giao_dien.ads.InterstitialAdManager
+import com.example.giao_dien.ads.AdConfig
+import com.example.giao_dien.ads.AdPlacement
+import com.example.giao_dien.ads.FirebaseConfigManager
+import com.example.giao_dien.ads.InterAdsUtils
 import com.example.giao_dien.data.repository.MemoryRepositoryImpl
 import com.example.giao_dien.databinding.ActivityAddMemoryBinding
 import com.example.giao_dien.databinding.DialogSelectPhotoBinding
@@ -63,9 +66,6 @@ class AddMemoryActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityAddMemoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // Tải trước Interstitial Ad khi mở màn hình
-        InterstitialAdManager.getInstance().loadAd(this)
 
         setupClickListeners()
         observeViewModel()
@@ -143,9 +143,14 @@ class AddMemoryActivity : AppCompatActivity() {
                     viewModel.event.collect { event ->
                         when (event) {
                             is AddMemoryEvent.SavedSuccessfully -> {
-                                InterstitialAdManager.getInstance().showAd(this@AddMemoryActivity) {
-                                    finish()
-                                }
+                                InterAdsUtils.showSplashAds(
+                                    activity = this@AddMemoryActivity,
+                                    lifecycleOwner = this@AddMemoryActivity,
+                                    idAds = AdConfig.remoteInterstitialId,
+                                    adPlacement = AdPlacement.INTER_SPLASH,
+                                    isEnable = FirebaseConfigManager.getInstance().adConfig.interSplash,
+                                    action = { finish() }
+                                )
                             }
                             is AddMemoryEvent.ShowToast -> {
                                 Toast.makeText(this@AddMemoryActivity, getString(event.messageRes), Toast.LENGTH_SHORT).show()

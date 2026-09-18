@@ -17,7 +17,10 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.example.giao_dien.R
-import com.example.giao_dien.ads.NativeAdManager
+import com.example.giao_dien.ads.AdConfig
+import com.example.giao_dien.ads.AdPlacement
+import com.example.giao_dien.ads.FirebaseConfigManager
+import com.example.giao_dien.ads.NativeAdsUtils
 import com.example.giao_dien.data.local.AppPreferences
 import com.example.giao_dien.data.repository.AppRepositoryImpl
 import com.example.giao_dien.databinding.ActivityPermissionBinding
@@ -26,7 +29,6 @@ import kotlinx.coroutines.launch
 class PermissionActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityPermissionBinding
-    private val nativeAdManager = NativeAdManager()
 
     private val viewModel: PermissionViewModel by viewModels {
         val prefs = AppPreferences(applicationContext)
@@ -66,7 +68,14 @@ class PermissionActivity : AppCompatActivity() {
         observeViewModel()
 
         // Tải Native Ad dưới đuôi màn hình Permission
-        nativeAdManager.loadNativeAd(this, binding.nativeAdContainer)
+        NativeAdsUtils.loadAndShowNativeAds(
+            activity = this,
+            lifecycleOwner = this,
+            idAds = AdConfig.remoteNativeId,
+            adPlacement = AdPlacement.NATIVE_INTRO, // Có thể dùng tạm cờ NATIVE_INTRO
+            isEnable = FirebaseConfigManager.getInstance().adConfig.nativeIntro,
+            container = binding.nativeAdContainer
+        )
     }
 
     override fun onResume() {
@@ -166,10 +175,5 @@ class PermissionActivity : AppCompatActivity() {
                 }
             }
         }
-    }
-
-    override fun onDestroy() {
-        nativeAdManager.destroyAd()
-        super.onDestroy()
     }
 }

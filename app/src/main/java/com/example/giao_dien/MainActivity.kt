@@ -8,7 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.example.giao_dien.ads.InterstitialAdManager
+import com.example.giao_dien.ads.AdConfig
+import com.example.giao_dien.ads.AdPlacement
+import com.example.giao_dien.ads.FirebaseConfigManager
+import com.example.giao_dien.ads.InterAdsUtils
 import com.example.giao_dien.data.local.AppPreferences
 import com.example.giao_dien.data.repository.AppRepositoryImpl
 import com.example.giao_dien.databinding.ActivityMainBinding
@@ -20,9 +23,13 @@ import com.example.giao_dien.ui.splash.SplashState
 import com.example.giao_dien.ui.splash.SplashViewModel
 import kotlinx.coroutines.launch
 
+/**
+ * MainActivity đóng vai trò Màn hình Mở đầu (Splash Screen).
+ */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
     private val viewModel: SplashViewModel by viewModels {
         val prefs = AppPreferences(applicationContext)
         val repository = AppRepositoryImpl(prefs)
@@ -35,17 +42,19 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // 1. Khởi tạo & Tải trước (Preload) Interstitial Ad
-        InterstitialAdManager.getInstance().loadAd(this)
-
         observeViewModel()
         viewModel.startLoadingAnimation()
     }
 
     private fun showAdThenNavigate(targetClass: Class<*>) {
-        InterstitialAdManager.getInstance().showAd(this) {
-            navigateToScreen(targetClass)
-        }
+        InterAdsUtils.showSplashAds(
+            activity = this,
+            lifecycleOwner = this,
+            idAds = AdConfig.remoteInterstitialId,
+            adPlacement = AdPlacement.INTER_SPLASH,
+            isEnable = FirebaseConfigManager.getInstance().adConfig.interSplash,
+            action = { navigateToScreen(targetClass) }
+        )
     }
 
     private fun observeViewModel() {
@@ -75,18 +84,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateDots(activeIndex: Int) {
-        val dots = listOf(
-            binding.dot1,
-            binding.dot2,
-            binding.dot3,
-            binding.dot4
-        )
+        val dots = listOf(binding.dot1, binding.dot2, binding.dot3, binding.dot4)
         dots.forEachIndexed { index, dot ->
-            if (index == activeIndex) {
-                dot.setBackgroundResource(R.drawable.bg_dot_active)
-            } else {
-                dot.setBackgroundResource(R.drawable.bg_dot)
-            }
+            dot.setBackgroundResource(if (index == activeIndex) R.drawable.bg_dot_active else R.drawable.bg_dot)
         }
     }
 

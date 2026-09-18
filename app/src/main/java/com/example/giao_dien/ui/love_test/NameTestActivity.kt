@@ -13,7 +13,10 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.example.giao_dien.R
-import com.example.giao_dien.ads.RewardedAdManager
+import com.example.giao_dien.ads.AdConfig
+import com.example.giao_dien.ads.AdPlacement
+import com.example.giao_dien.ads.FirebaseConfigManager
+import com.example.giao_dien.ads.RewardAdsUtils
 import com.example.giao_dien.databinding.ActivityNameTestBinding
 import kotlinx.coroutines.launch
 
@@ -32,7 +35,12 @@ class NameTestActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Preload Rewarded Video Ad khi mở màn hình
-        RewardedAdManager.getInstance().loadAd(this)
+        RewardAdsUtils.loadRewardAds(
+            activity = this,
+            idAds = AdConfig.remoteRewardedId,
+            adPlacement = AdPlacement.REWARD_NAME_TEST,
+            isEnable = FirebaseConfigManager.getInstance().adConfig.rewardNameTest
+        )
 
         setupClickListeners()
         observeViewModel()
@@ -90,22 +98,20 @@ class NameTestActivity : AppCompatActivity() {
 
         btnWatch?.setOnClickListener {
             dialog.dismiss()
-            if (RewardedAdManager.getInstance().isAdAvailable()) {
-                RewardedAdManager.getInstance().showAd(
-                    activity = this,
-                    onRewardEarned = {
-                        // Người dùng đã xem HẾT 30s video ➔ Cho phép xem kết quả!
-                        onSuccess()
-                    },
-                    onAdDismissed = {
-                        // Bấm tắt giữa chừng ➔ Thông báo yêu cầu xem hết video
-                        Toast.makeText(this, "Bạn cần xem hết video để xem báo cáo kết quả tương hợp!", Toast.LENGTH_SHORT).show()
-                    }
-                )
-            } else {
-                // Nếu Ad chưa sẵn sàng (mạng chậm), cho phép xem kết quả không bắt chờ
-                onSuccess()
-            }
+            RewardAdsUtils.showRewardAds(
+                activity = this,
+                lifecycleOwner = this,
+                adPlacement = AdPlacement.REWARD_NAME_TEST,
+                isEnable = FirebaseConfigManager.getInstance().adConfig.rewardNameTest,
+                onEarned = {
+                    // Xem xong nhận thưởng
+                    onSuccess()
+                },
+                onNextAction = {
+                    // Xem nửa chừng bỏ hoặc gặp lỗi
+                    Toast.makeText(this, "Bạn cần xem hết video để xem báo cáo kết quả tương hợp!", Toast.LENGTH_SHORT).show()
+                }
+            )
         }
 
         btnCancel?.setOnClickListener {

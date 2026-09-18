@@ -14,7 +14,10 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.giao_dien.ads.NativeAdManager
+import com.example.giao_dien.ads.AdConfig
+import com.example.giao_dien.ads.AdPlacement
+import com.example.giao_dien.ads.FirebaseConfigManager
+import com.example.giao_dien.ads.NativeAdsUtils
 import com.example.giao_dien.data.local.AppPreferences
 import com.example.giao_dien.data.repository.AppRepositoryImpl
 import com.example.giao_dien.databinding.ActivityLanguageBinding
@@ -26,7 +29,6 @@ class LanguageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLanguageBinding
     private lateinit var adapter: LanguageAdapter
     private var isFromSetting: Boolean = false
-    private val nativeAdManager = NativeAdManager()
 
     private val viewModel: LanguageViewModel by viewModels {
         val prefs = AppPreferences(applicationContext)
@@ -57,8 +59,15 @@ class LanguageActivity : AppCompatActivity() {
         setupClickListeners()
         observeViewModel()
 
-        // Tải Native Ad dưới mép màn hình
-        nativeAdManager.loadNativeAd(this, binding.nativeAdContainer)
+        // Load Native Ad
+        NativeAdsUtils.loadAndShowNativeAds(
+            activity = this,
+            lifecycleOwner = this,
+            idAds = AdConfig.remoteNativeId,
+            adPlacement = AdPlacement.NATIVE_LANGUAGE,
+            isEnable = FirebaseConfigManager.getInstance().adConfig.nativeLanguage,
+            container = binding.nativeAdContainer
+        )
     }
 
     private fun setupRecyclerView() {
@@ -109,11 +118,6 @@ class LanguageActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-    }
-
-    override fun onDestroy() {
-        nativeAdManager.destroyAd()
-        super.onDestroy()
     }
 
     companion object {

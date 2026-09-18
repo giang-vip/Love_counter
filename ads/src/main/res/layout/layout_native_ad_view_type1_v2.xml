@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.gms.ads.nativead.NativeAdView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/native_ad_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/gnt_outline_shape">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ad_unit_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/size12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size8"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ad_media">
+
+            <ImageView
+                android:id="@+id/ad_app_icon"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:scaleType="fitCenter"
+                tools:src="@tools:sample/avatars" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textAd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/size8"
+                        android:background="@drawable/shape_ad_view_v3"
+                        android:fontFamily="@font/sf_regular"
+                        android:includeFontPadding="false"
+                        android:paddingHorizontal="@dimen/size4"
+                        android:paddingVertical="@dimen/size2"
+                        android:text="Ad"
+                        android:textColor="#131316"
+                        android:textSize="@dimen/size12" />
+
+                    <TextView
+                        android:id="@+id/ad_headline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/size8"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/sf_medium"
+                        android:includeFontPadding="false"
+                        android:lines="1"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/size14"
+                        tools:text="Nhận học bổng du học Mỹ" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/ad_body"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size8"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/sf_regular"
+                    android:includeFontPadding="false"
+                    android:maxLines="2"
+                    android:textColor="#8C8C8C"
+                    android:textSize="@dimen/size10"
+                    android:visibility="visible"
+                    tools:text="@tools:sample/lorem/random" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.google.android.gms.ads.nativead.MediaView
+            android:id="@+id/ad_media"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size120"
+            android:layout_marginTop="@dimen/size12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ad_call_to_action"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size44"
+            android:layout_marginTop="@dimen/size16"
+            android:layout_marginBottom="@dimen/size12"
+            android:background="@drawable/shape_cta_native_admob"
+            android:fontFamily="@font/sf_semi_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:lines="1"
+            android:textColor="@color/gnt_white"
+            android:textSize="@dimen/size16"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_min="@dimen/size40"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.gms.ads.nativead.NativeAdView>

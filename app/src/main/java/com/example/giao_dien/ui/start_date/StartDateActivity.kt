@@ -10,7 +10,10 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.example.giao_dien.ads.InterstitialAdManager
+import com.example.giao_dien.ads.AdConfig
+import com.example.giao_dien.ads.AdPlacement
+import com.example.giao_dien.ads.FirebaseConfigManager
+import com.example.giao_dien.ads.InterAdsUtils
 import com.example.giao_dien.data.local.AppPreferences
 import com.example.giao_dien.data.repository.CoupleRepositoryImpl
 import com.example.giao_dien.databinding.ActivityStartDateBinding
@@ -37,9 +40,6 @@ class StartDateActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        // Tải trước Interstitial Ad khi mở màn hình
-        InterstitialAdManager.getInstance().loadAd(this)
 
         setupClickListeners()
         observeViewModel()
@@ -78,9 +78,14 @@ class StartDateActivity : AppCompatActivity() {
                     viewModel.event.collect { event ->
                         when (event) {
                             is StartDateEvent.SavedSuccessfully -> {
-                                InterstitialAdManager.getInstance().showAd(this@StartDateActivity) {
-                                    finish()
-                                }
+                                InterAdsUtils.showSplashAds(
+                                    activity = this@StartDateActivity,
+                                    lifecycleOwner = this@StartDateActivity,
+                                    idAds = AdConfig.remoteInterstitialId,
+                                    adPlacement = AdPlacement.INTER_SPLASH, // Hoặc định nghĩa cờ riêng
+                                    isEnable = FirebaseConfigManager.getInstance().adConfig.interSplash,
+                                    action = { finish() }
+                                )
                             }
                         }
                     }

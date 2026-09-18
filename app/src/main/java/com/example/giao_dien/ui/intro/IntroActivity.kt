@@ -9,7 +9,10 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.viewpager2.widget.ViewPager2
 import com.example.giao_dien.R
-import com.example.giao_dien.ads.NativeAdManager
+import com.example.giao_dien.ads.AdConfig
+import com.example.giao_dien.ads.AdPlacement
+import com.example.giao_dien.ads.FirebaseConfigManager
+import com.example.giao_dien.ads.NativeAdsUtils
 import com.example.giao_dien.data.local.AppPreferences
 import com.example.giao_dien.data.repository.AppRepositoryImpl
 import com.example.giao_dien.databinding.ActivityIntroBinding
@@ -19,7 +22,6 @@ import kotlinx.coroutines.launch
 class IntroActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityIntroBinding
-    private val nativeAdManager = NativeAdManager()
 
     private val viewModel: IntroViewModel by viewModels {
         val prefs = AppPreferences(applicationContext)
@@ -36,8 +38,15 @@ class IntroActivity : AppCompatActivity() {
         setupNextButton()
         observeViewModel()
 
-        // Tải Native Ad dưới mép màn hình Intro
-        nativeAdManager.loadNativeAd(this, binding.nativeAdContainer)
+        // Load Native Ad
+        NativeAdsUtils.loadAndShowNativeAds(
+            activity = this,
+            lifecycleOwner = this,
+            idAds = AdConfig.remoteNativeId,
+            adPlacement = AdPlacement.NATIVE_INTRO,
+            isEnable = FirebaseConfigManager.getInstance().adConfig.nativeIntro,
+            container = binding.nativeAdContainer
+        )
     }
 
     private fun setupNextButton() {
@@ -129,10 +138,5 @@ class IntroActivity : AppCompatActivity() {
 
     private fun dpToPx(dp: Int): Int {
         return (dp * resources.displayMetrics.density).toInt()
-    }
-
-    override fun onDestroy() {
-        nativeAdManager.destroyAd()
-        super.onDestroy()
     }
 }

@@ -5,13 +5,15 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
-import com.example.giao_dien.ads.BannerAdManager
+import com.example.giao_dien.ads.AdConfig
+import com.example.giao_dien.ads.AdPlacement
+import com.example.giao_dien.ads.BannerAdsUtils
+import com.example.giao_dien.ads.FirebaseConfigManager
 import com.example.giao_dien.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
-    private val bannerAdManager = BannerAdManager()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,14 +24,21 @@ class HomeActivity : AppCompatActivity() {
         setupViewPager()
         setupBottomNav()
 
-        // Tải Adaptive Banner Ad cố định ở đáy màn hình
-        bannerAdManager.loadBannerAd(this, binding.bannerAdContainer)
+        // Load Banner Ad
+        BannerAdsUtils.loadBanner(
+            activity = this,
+            lifecycleOwner = this,
+            idAds = AdConfig.remoteBannerId,
+            adPlacement = AdPlacement.BANNER_HOME,
+            isEnable = FirebaseConfigManager.getInstance().adConfig.bannerHome,
+            container = binding.bannerAdContainer
+        )
     }
 
     private fun setupViewPager() {
         val adapter = HomePagerAdapter(this)
         binding.viewPagerHome.adapter = adapter
-        binding.viewPagerHome.isUserInputEnabled = false
+        binding.viewPagerHome.isUserInputEnabled = false 
 
         binding.viewPagerHome.registerOnPageChangeCallback(
             object : ViewPager2.OnPageChangeCallback() {
@@ -65,10 +74,5 @@ class HomeActivity : AppCompatActivity() {
 
         binding.ivNavMemory.setColorFilter(if (position == 2) activeColor else inactiveColor)
         binding.tvNavMemory.setTextColor(if (position == 2) activeColor else inactiveColor)
-    }
-
-    override fun onDestroy() {
-        bannerAdManager.destroyAd()
-        super.onDestroy()
     }
 }

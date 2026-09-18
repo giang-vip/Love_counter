@@ -18,7 +18,10 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.example.giao_dien.R
-import com.example.giao_dien.ads.InterstitialAdManager
+import com.example.giao_dien.ads.AdConfig
+import com.example.giao_dien.ads.AdPlacement
+import com.example.giao_dien.ads.FirebaseConfigManager
+import com.example.giao_dien.ads.InterAdsUtils
 import com.example.giao_dien.data.local.AppPreferences
 import com.example.giao_dien.data.repository.CoupleRepositoryImpl
 import com.example.giao_dien.databinding.ActivityChangeInfoBinding
@@ -81,9 +84,6 @@ class ChangeInfoActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        // Tải trước Interstitial Ad khi mở màn hình
-        InterstitialAdManager.getInstance().loadAd(this)
 
         setupGenderSpinner()
         setupClickListeners()
@@ -206,9 +206,16 @@ class ChangeInfoActivity : AppCompatActivity() {
                     viewModel.event.collect { event ->
                         when (event) {
                             is ChangeInfoEvent.SavedSuccessfully -> {
-                                InterstitialAdManager.getInstance().showAd(this@ChangeInfoActivity) {
-                                    finish()
-                                }
+                                InterAdsUtils.showSplashAds(
+                                    activity = this@ChangeInfoActivity,
+                                    lifecycleOwner = this@ChangeInfoActivity,
+                                    idAds = AdConfig.remoteInterstitialId,
+                                    adPlacement = AdPlacement.INTER_SPLASH,
+                                    isEnable = FirebaseConfigManager.getInstance().adConfig.interSplash,
+                                    action = {
+                                        finish()
+                                    }
+                                )
                             }
                         }
                     }
