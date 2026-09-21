@@ -7,7 +7,7 @@ Dự án ứng dụng Android **Love Counter (Giao_dien)** được tổ chức 
 ## 📁 Cấu Trúc Thư Mục Dự Án (Project Structure)
 
 ```
-com.example.giao_dien/
+com.app.love_counter/
 │
 ├── ads/                                  # Tầng Quảng Cáo (Google AdMob SDK)
 │   ├── AdConfig.kt                       # Quản lý tập trung 100% Mã Quảng Cáo (Ad Unit ID)

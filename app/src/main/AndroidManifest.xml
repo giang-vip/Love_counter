@@ -17,7 +17,7 @@
         android:maxSdkVersion="32" />
 
     <application
-        android:name=".MyApplication"
+        android:name=".App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -28,7 +28,7 @@
         android:theme="@style/Theme.Giao_dien">
 
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.splash.SplashActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -39,66 +39,66 @@
         </activity>
 
         <activity
-            android:name="com.example.giao_dien.ui.language.LanguageActivity"
+            android:name="com.app.love_counter.ui.language.LanguageActivity"
             android:exported="false" />
 
         <activity
-            android:name="com.example.giao_dien.ui.intro.IntroActivity"
+            android:name="com.app.love_counter.ui.intro.IntroActivity"
             android:exported="false" />
 
         <activity
-            android:name="com.example.giao_dien.ui.permission.PermissionActivity"
+            android:name="com.app.love_counter.ui.permission.PermissionActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name="com.example.giao_dien.ui.home.HomeActivity"
+            android:name="com.app.love_counter.ui.home.HomeActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name="com.example.giao_dien.ui.change_info.ChangeInfoActivity"
+            android:name="com.app.love_counter.ui.change_info.ChangeInfoActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name="com.example.giao_dien.ui.start_date.StartDateActivity"
+            android:name="com.app.love_counter.ui.start_date.StartDateActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name="com.example.giao_dien.ui.background.ChooseBackgroundActivity"
+            android:name="com.app.love_counter.ui.background.ChooseBackgroundActivity"
             android:exported="false"
             android:theme="@style/Theme.Giao_dien"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name="com.example.giao_dien.ui.memory.AddMemoryActivity"
+            android:name="com.app.love_counter.ui.memory.AddMemoryActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name="com.example.giao_dien.ui.love_test.NameTestActivity"
+            android:name="com.app.love_counter.ui.love_test.NameTestActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name="com.example.giao_dien.ui.love_test.NameTestResultActivity"
+            android:name="com.app.love_counter.ui.love_test.NameTestResultActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name="com.example.giao_dien.ui.horoscope.HoroscopeTestActivity"
+            android:name="com.app.love_counter.ui.horoscope.HoroscopeTestActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name="com.example.giao_dien.ui.horoscope.HoroscopeTestResultActivity"
+            android:name="com.app.love_counter.ui.horoscope.HoroscopeTestResultActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name="com.example.giao_dien.ui.setting.SettingActivity"
+            android:name="com.app.love_counter.ui.setting.SettingActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 

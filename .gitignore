@@ -13,3 +13,21 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# ==========================================
+# CÁC FILE BẢO MẬT BẮT BUỘC KHÔNG ĐẨY LÊN GIT
+# ==========================================
+
+# 1. Thư mục chứa file Key (.jks / .keystore)
+/key/
+*.jks
+*.keystore
+
+# 2. File chứa mật khẩu KeyStore
+keystore.properties
+
+# 3. File cấu hình Firebase thật của công ty
+google-services.json
+
+# 4. Thư mục cài đặt cá nhân của Android Studio
+.idea/

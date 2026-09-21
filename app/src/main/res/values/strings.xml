@@ -131,4 +131,10 @@
     <string name="msg_error_unable_open_link">Unable to open link</string>
     <string name="share_chooser_title">Share</string>
     <string name="tv_ads_notice">This action can contain ads</string>
+
+    <!-- No Internet Dialog -->
+    <string name="no_internet_title">No Internet Connection</string>
+    <string name="no_internet_message">Please check your internet connection and try again.</string>
+    <string name="retry">Retry</string>
+    <string name="exit">Exit</string>
 </resources>

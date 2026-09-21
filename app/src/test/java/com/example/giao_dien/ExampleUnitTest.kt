@@ -1,4 +1,4 @@
-package com.example.giao_dien
+package com.app.love_counter
 
 import org.junit.Test
 

@@ -1,0 +1,192 @@
+package com.app.love_counter.ui.permission
+
+import android.Manifest
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
+import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import com.app.love_counter.R
+import android.view.View
+import com.app.love_counter.ads.AdPlacement
+import com.app.love_counter.ads.NativeAdsUtils
+import com.app.love_counter.data.local.AppPreferences
+import com.app.love_counter.data.repository.AppRepositoryImpl
+import com.app.love_counter.databinding.ActivityPermissionBinding
+import kotlinx.coroutines.launch
+
+class PermissionActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityPermissionBinding
+
+    private val viewModel: PermissionViewModel by viewModels {
+        val prefs = AppPreferences(applicationContext)
+        val repository = AppRepositoryImpl(prefs)
+        PermissionViewModel.Factory(repository)
+    }
+
+    // Nhận kết quả sau khi hệ thống Android hỏi quyền
+    private val permissionLauncher =
+        registerForActivityResult(
+            ActivityResultContracts.RequestMultiplePermissions()
+        ) { permissions ->
+            val cameraGranted = permissions[Manifest.permission.CAMERA] == true
+            val photoGranted = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                permissions[Manifest.permission.READ_MEDIA_IMAGES] == true
+            } else {
+                permissions[Manifest.permission.READ_EXTERNAL_STORAGE] == true
+            }
+
+            val allGranted = cameraGranted && photoGranted
+            viewModel.updatePermissionResult(allGranted)
+        }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        binding = ActivityPermissionBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        initViews()
+        initAds()
+        bindActions()
+        observeViewModel()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Kiểm tra thực tế quyền từ hệ thống Android
+        checkActualSystemPermissions()
+    }
+
+    /**
+     * KHỞI TẠO VIEWS VÀ INSETS
+     */
+    private fun initViews() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+    }
+
+    /**
+     * KHỞI TẠO QUẢNG CÁO: Đổ quảng cáo mồi từ RAM ra giao diện
+     */
+    private fun initAds() {
+        // Hiển thị Native Ad Permission đã được tải mồi từ IntroActivity
+        NativeAdsUtils.getInstance().showNativeAds(
+            container = binding.nativeAdContainer,
+            adPlacement = AdPlacement.NATIVE_PERMISSION
+        )
+    }
+
+    /**
+     * THIẾT LẬP CÁC SỰ KIỆN CLICK HÀNH ĐỘNG
+     */
+    private fun bindActions() {
+        // Bấm vào cả thẻ "Allow access" hoặc bấm vào nút Switch
+        val onPermissionClick = {
+            if (!viewModel.uiState.value.isPermissionGranted) {
+                binding.switchPermission.isChecked = false
+                showPermissionDialog()
+            }
+        }
+
+        binding.layoutSwitch.setOnClickListener { onPermissionClick() }
+        binding.switchPermission.setOnClickListener { onPermissionClick() }
+
+        binding.tvContinue.setOnClickListener {
+            viewModel.onContinueClicked()
+        }
+    }
+
+    private fun showPermissionDialog() {
+        AlertDialog.Builder(this)
+            .setTitle(getString(R.string.permission_dialog_title))
+            .setMessage(getString(R.string.permission_dialog_message))
+            .setNegativeButton(getString(R.string.permission_dialog_cancel)) { dialog, _ ->
+                dialog.dismiss()
+                binding.switchPermission.isChecked = viewModel.uiState.value.isPermissionGranted
+            }
+            .setPositiveButton(getString(R.string.permission_dialog_confirm)) { _, _ ->
+                requestPermissions()
+            }
+            .setCancelable(false)
+            .show()
+    }
+
+    private fun requestPermissions() {
+        val permissions = mutableListOf<String>()
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            permissions.add(Manifest.permission.CAMERA)
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_MEDIA_IMAGES) != PackageManager.PERMISSION_GRANTED) {
+                permissions.add(Manifest.permission.READ_MEDIA_IMAGES)
+            }
+        } else {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                permissions.add(Manifest.permission.READ_EXTERNAL_STORAGE)
+            }
+        }
+
+        if (permissions.isEmpty()) {
+            viewModel.updatePermissionResult(true)
+            return
+        }
+
+        permissionLauncher.launch(permissions.toTypedArray())
+    }
+
+    private fun checkActualSystemPermissions() {
+        val cameraGranted = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED
+        val photoGranted = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            ContextCompat.checkSelfPermission(this, Manifest.permission.READ_MEDIA_IMAGES) == PackageManager.PERMISSION_GRANTED
+        } else {
+            ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+        }
+
+        val allGranted = cameraGranted && photoGranted
+        viewModel.updatePermissionResult(allGranted)
+    }
+
+    /**
+     * OBSERVE STATEFLOW VÀ CẬP NHẬT TRẠNG THÁI GIAO DIỆN
+     */
+    private fun observeViewModel() {
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                launch {
+                    viewModel.uiState.collect { state ->
+                        binding.switchPermission.isChecked = state.isPermissionGranted
+                    }
+                }
+
+                launch {
+                    viewModel.event.collect { event ->
+                        when (event) {
+                            is PermissionEvent.FinishPermissionScreen -> {
+                                val intent = Intent(this@PermissionActivity, com.app.love_counter.ui.home.HomeActivity::class.java)
+                                startActivity(intent)
+                                finish()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

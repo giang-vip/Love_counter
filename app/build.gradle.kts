@@ -6,17 +6,28 @@ plugins {
 }
 
 android {
-    namespace = "com.example.giao_dien"
+    namespace = "com.app.love_counter"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.giao_dien"
+        applicationId = "com.app.love_counter"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // Khai báo mã ID Quảng Cáo ở đây (Giống chuẩn file Base)
+        // Lưu ý: Dấu ngoặc kép bên trong cực kỳ quan trọng
+        buildConfigField("String", "inter_id", "\"ca-app-pub-3940256099942544/1033173712\"")
+        buildConfigField("String", "native_id", "\"ca-app-pub-3940256099942544/2247696110\"")
+        buildConfigField("String", "banner_id", "\"ca-app-pub-3940256099942544/6300978111\"")
+        buildConfigField("String", "app_open_id", "\"ca-app-pub-3940256099942544/9257395921\"")
+        buildConfigField("String", "reward_id", "\"ca-app-pub-3940256099942544/5224354917\"")
+        
+        // App ID dùng cho Manifest
+        manifestPlaceholders["admob_app_id"] = "ca-app-pub-3940256099942544~3347511713"
     }
 
     buildTypes {
@@ -33,7 +44,10 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    buildFeatures { viewBinding = true }
+    buildFeatures { 
+        viewBinding = true 
+        buildConfig = true // Phải bật cờ này để Gradle sinh ra file BuildConfig chứa các ID trên
+    }
 
     packaging {
         resources {
