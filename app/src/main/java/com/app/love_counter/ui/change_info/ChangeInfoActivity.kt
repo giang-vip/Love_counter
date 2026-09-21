@@ -58,6 +58,7 @@ class ChangeInfoActivity : AppCompatActivity() {
         ActivityResultContracts.TakePicturePreview()
     ) { bitmap: Bitmap? ->
         bitmap?.let {
+
             val fileName = if (isMale) "male_avatar.png" else "female_avatar.png"
             val folder = File(filesDir, "avatars").apply { if (!exists()) mkdirs() }
             val file = File(folder, fileName)

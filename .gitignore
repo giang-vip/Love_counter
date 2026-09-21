@@ -19,7 +19,7 @@ local.properties
 # ==========================================
 
 # 1. Thư mục chứa file Key (.jks / .keystore)
-/key/
+/app/key/
 *.jks
 *.keystore
 
